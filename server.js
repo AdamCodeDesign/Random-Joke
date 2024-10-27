@@ -4,6 +4,7 @@ const {
   getJoke,
   getRandom,
 } = require("./controllers/jokeController");
+const { serverStaticFile } = require("./util/staticServer");
 
 const PORT = 8080;
 const API_CONTENT_TYPE = { "Content-Type": "application/json" };
@@ -43,6 +44,8 @@ const server = http.createServer(async function (req, res) {
       joke = { message: "Joke not found" };
     }
     res.end(JSON.stringify(joke));
+  } else {
+    serverStaticFile(req, res);
   }
 });
 server.listen(PORT);
