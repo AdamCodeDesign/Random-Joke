@@ -43,8 +43,11 @@ body {
     font-size: 1.2rem;
     color: white;
 
-    &:hover{
-        filter: brightness(150%);
+    &:hover {
+      filter: brightness(150%);
+    }
+    &:active {
+      transform: scale(0.95);
     }
   }
 }
