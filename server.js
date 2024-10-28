@@ -31,7 +31,8 @@ const server = http.createServer(async function (req, res) {
       res.writeHead(404, API_CONTENT_TYPE);
       joke = { message: "Joke not found" };
     }
-
+    console.log(joke);
+    console.log(JSON.stringify(joke));
     res.end(JSON.stringify(joke));
   } else if (req.url.match(/\/api\/jokes\/([0-9]+)/) && req.method === "GET") {
     const id = req.url.split("/")[3];
